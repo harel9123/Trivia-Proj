@@ -12,6 +12,7 @@
 #include "Room.h"
 //#include "ReceivedMessage.h" //Add after creation.
 
+#pragma comment(lib,"ws2_32.lib")
 using namespace std;
 
 class TriviaServer

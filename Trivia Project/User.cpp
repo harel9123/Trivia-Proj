@@ -2,7 +2,8 @@
 
 User::User(string name, SOCKET sock)
 {
-
+	_username = name;
+	_sock = sock;
 }
 
 void User::send(string)

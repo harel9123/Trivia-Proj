@@ -100,7 +100,7 @@ void TriviaServer::addReceivedMessage(string *)
 
 }
 
-string * TriviaServer::buildReceiveMessage(SOCKET, int)
+string * TriviaServer::buildReceiveMessage(SOCKET client_sock, int msgCode)
 {
 
 }

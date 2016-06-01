@@ -1,6 +1,6 @@
 #include "Room.h"
 
-Room::Room(int, User *, string, int, int, int)
+Room::Room(int id, User * admin, string name, int maxUsers, int questionsNo, int questionTime)
 {
 
 }

@@ -5,11 +5,13 @@
 #include <Windows.h>
 #include <WinSock2.h>
 #include "Room.h"
+#include "Game.h"
 
+#pragma comment(lib,"ws2_32.lib")
 using namespace std;
 
 class Room
-{ 
+{
 
 };
 
@@ -18,7 +20,7 @@ class User
 	private:
 		string _username;
 		Room * _currRoom;
-		string _currGame;//Game *
+		Game * _currGame;
 		SOCKET _sock;
 
 	public:
@@ -27,9 +29,9 @@ class User
 		string getUsername() { return _username; };
 		SOCKET getSocket() { return _sock; };
 		Room * getRoom() { return _currRoom; };
-		string getGame() { return _currGame; };//Game *
+		Game * getGame() { return _currGame; };
 
-		void setGame(string game) { _currGame = game; };//Game *
+		void setGame(Game * game) { _currGame = game; };
 		void clearRoom();
 
 		bool createRoom(int, string, int, int, int);//Fill in
