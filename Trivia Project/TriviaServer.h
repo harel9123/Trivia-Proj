@@ -2,23 +2,26 @@
 
 #include <iostream>
 #include <string>
-#include <Windows.h>
-#include <WinSock2.h>
 #include <mutex>
 #include <map>
 #include <queue>
+#include <exception>
+#include <winsock2.h>
+#include <windows.h>
+#pragma comment(lib, "ws2_32.lib")
 
+#include "Socket.h"
 #include "User.h"
 #include "Room.h"
 //#include "ReceivedMessage.h" //Add after creation.
 
-#pragma comment(lib,"ws2_32.lib")
+
 using namespace std;
 
 class TriviaServer
 {
 	private:
-		SOCKET _socket;
+		Socket * _socket;
 		map<SOCKET, User *> _connectedUsers;
 		string _db;//string --> DataBase.
 		map<int, Room *> _roomsList;
@@ -28,7 +31,7 @@ class TriviaServer
 
 		static int _roomIdSequence;
 
-		void bindAndListen();
+		void bindAndListen() throw();
 		void accept();
 		void clientHandler(SOCKET client);
 		void safeDeleteUser(string *); //string --> ReceivedMessage.

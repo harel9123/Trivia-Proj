@@ -1,13 +1,35 @@
 #include "TriviaServer.h"
 
-void TriviaServer::bindAndListen()
+void TriviaServer::bindAndListen() throw()
 {
-
+	_socket = new Socket(8820);
+	int result;
+	result = _socket->socketBind();
+	if (result == SOCKET_ERROR)
+	{
+		exception * e = new exception("Binding the socket has failed !");
+		delete _socket;
+		throw(e);
+	}
+	result = _socket->socketListen(1);
+	if (result == SOCKET_ERROR)
+	{
+		exception * e = new exception("Listening to the socket has failed !");
+		delete _socket;
+		throw(e);
+	}
 }
 
 void TriviaServer::accept()
 {
-
+	SOCKET soc = _socket->socketAccept();
+	if (soc == SOCKET_ERROR)
+	{
+		exception * e = new exception("Accepting connection has failed !");
+		delete _socket;
+		throw(e);
+	}
+	//Add the user to _connectedUsers
 }
 
 void TriviaServer::clientHandler(SOCKET client)
