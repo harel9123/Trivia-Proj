@@ -6,7 +6,7 @@ User::User(string name, SOCKET sock)
 	_sock = sock;
 }
 
-void User::send(string)
+void User::send(string message)
 {
 
 }
@@ -16,7 +16,7 @@ void User::clearRoom()
 
 }
 
-bool User::createRoom(int, string, int, int, int)
+bool User::createRoom(int roomId, string roomName, int maxUsers, int questionsNo, int questionTime)
 {
 
 }

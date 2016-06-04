@@ -1,7 +1,7 @@
-﻿Build started 02/06/2016 22:33:16.
+﻿Build started 04/06/2016 18:10:11.
      1>Project "D:\Documents\Projects\Trivia Project\Trivia Project\Trivia Project.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         D:\Program Files\VS12\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Game.cpp Room.cpp TriviaServer.cpp User.cpp
+         D:\Program Files\VS12\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Game.cpp Helper.cpp main.cpp Room.cpp Socket.cpp TriviaServer.cpp User.cpp
          User.cpp
      1>c:\program files (x86)\windows kits\8.1\include\shared\ws2def.h(100): warning C4005: 'AF_IPX' : macro redefinition
                  c:\program files (x86)\windows kits\8.1\include\um\winsock.h(452) : see previous definition of 'AF_IPX'
@@ -194,34 +194,15 @@
      1>d:\documents\projects\trivia project\trivia project\user.cpp(5): error C2143: syntax error : missing '}' before ';'
      1>d:\documents\projects\trivia project\trivia project\user.cpp(5): fatal error C1903: unable to recover from previous error(s); stopping compilation
          TriviaServer.cpp
-     1>d:\documents\projects\trivia project\trivia project\room.h(17): error C2143: syntax error : missing ';' before '<'
-     1>d:\documents\projects\trivia project\trivia project\room.h(17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-     1>d:\documents\projects\trivia project\trivia project\room.h(17): error C2238: unexpected token(s) preceding ';'
-     1>d:\documents\projects\trivia project\trivia project\room.h(22): error C2146: syntax error : missing ';' before identifier '_name'
-     1>d:\documents\projects\trivia project\trivia project\room.h(22): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-     1>d:\documents\projects\trivia project\trivia project\room.h(25): error C2146: syntax error : missing ';' before identifier 'getUsersAsString'
-     1>d:\documents\projects\trivia project\trivia project\room.h(25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-     1>d:\documents\projects\trivia project\trivia project\room.h(25): error C2061: syntax error : identifier 'vector'
-     1>d:\documents\projects\trivia project\trivia project\room.h(25): warning C4183: 'getUsersAsString': missing return type; assumed to be a member function returning 'int'
-     1>d:\documents\projects\trivia project\trivia project\room.h(26): error C2061: syntax error : identifier 'string'
-     1>d:\documents\projects\trivia project\trivia project\room.h(27): error C2061: syntax error : identifier 'string'
-     1>d:\documents\projects\trivia project\trivia project\room.h(29): error C2061: syntax error : identifier 'string'
-     1>d:\documents\projects\trivia project\trivia project\room.h(35): error C2146: syntax error : missing ';' before identifier 'getUsersListMessage'
-     1>d:\documents\projects\trivia project\trivia project\room.h(35): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-     1>d:\documents\projects\trivia project\trivia project\room.h(35): warning C4183: 'getUsersListMessage': missing return type; assumed to be a member function returning 'int'
-     1>d:\documents\projects\trivia project\trivia project\room.h(36): error C2143: syntax error : missing ';' before '<'
-     1>d:\documents\projects\trivia project\trivia project\room.h(36): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-     1>d:\documents\projects\trivia project\trivia project\room.h(36): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
-     1>d:\documents\projects\trivia project\trivia project\room.h(39): error C2146: syntax error : missing ';' before identifier 'getName'
-     1>d:\documents\projects\trivia project\trivia project\room.h(39): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-     1>d:\documents\projects\trivia project\trivia project\room.h(39): warning C4183: 'getName': missing return type; assumed to be a member function returning 'int'
-     1>d:\documents\projects\trivia project\trivia project\room.h(39): error C2065: '_name' : undeclared identifier
      1>d:\documents\projects\trivia project\trivia project\user.h(14): error C2011: 'Room' : 'class' type redefinition
                  d:\documents\projects\trivia project\trivia project\room.h(15) : see declaration of 'Room'
      1>d:\documents\projects\trivia project\trivia project\user.h(19): error C2011: 'User' : 'class' type redefinition
                  d:\documents\projects\trivia project\trivia project\room.h(10) : see declaration of 'User'
-     1>d:\documents\projects\trivia project\trivia project\triviaserver.cpp(36): error C2440: '=' : cannot convert from 'std::_Bind<false,void,SOCKET &,sockaddr *,unsigned int>' to 'int'
-                 No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+     1>d:\documents\projects\trivia project\trivia project\triviaserver.cpp(12): warning C4297: 'TriviaServer::bindAndListen' : function assumed not to throw an exception but does
+                 __declspec(nothrow) or throw() was specified on the function
+     1>d:\documents\projects\trivia project\trivia project\triviaserver.cpp(19): warning C4297: 'TriviaServer::bindAndListen' : function assumed not to throw an exception but does
+                 __declspec(nothrow) or throw() was specified on the function
+         Socket.cpp
          Room.cpp
      1>c:\program files (x86)\windows kits\8.1\include\shared\ws2def.h(100): warning C4005: 'AF_IPX' : macro redefinition
                  c:\program files (x86)\windows kits\8.1\include\um\winsock.h(452) : see previous definition of 'AF_IPX'
@@ -407,6 +388,12 @@
                  d:\documents\projects\trivia project\trivia project\user.h(14) : see declaration of 'Room'
      1>d:\documents\projects\trivia project\trivia project\room.cpp(38): error C2027: use of undefined type 'Room'
                  d:\documents\projects\trivia project\trivia project\user.h(14) : see declaration of 'Room'
+         main.cpp
+     1>d:\documents\projects\trivia project\trivia project\user.h(14): error C2011: 'Room' : 'class' type redefinition
+                 d:\documents\projects\trivia project\trivia project\room.h(15) : see declaration of 'Room'
+     1>d:\documents\projects\trivia project\trivia project\user.h(19): error C2011: 'User' : 'class' type redefinition
+                 d:\documents\projects\trivia project\trivia project\room.h(10) : see declaration of 'User'
+         Helper.cpp
          Game.cpp
      1>c:\program files (x86)\windows kits\8.1\include\shared\ws2def.h(100): warning C4005: 'AF_IPX' : macro redefinition
                  c:\program files (x86)\windows kits\8.1\include\um\winsock.h(452) : see previous definition of 'AF_IPX'
@@ -591,4 +578,4 @@
 
 Build FAILED.
 
-Time Elapsed 00:00:02.90
+Time Elapsed 00:00:05.00
