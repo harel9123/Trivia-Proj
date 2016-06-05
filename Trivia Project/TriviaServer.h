@@ -13,7 +13,7 @@
 #include "Socket.h"
 #include "User.h"
 #include "Room.h"
-//#include "ReceivedMessage.h" //Add after creation.
+#include "ReceivedMessage.h"
 
 
 using namespace std;
@@ -27,36 +27,36 @@ class TriviaServer
 		map<int, Room *> _roomsList;
 
 		mutex _mtxReceivedMessages;
-		queue<string *> _queRcvMessages;//string --> ReceivedMessage.
+		queue<ReceivedMessage *> _queRcvMessages;
 
 		static int _roomIdSequence;
 
 		void bindAndListen() throw();
 		void accept();
 		void clientHandler(SOCKET client);
-		void safeDeleteUser(string *); //string --> ReceivedMessage.
+		void safeDeleteUser(ReceivedMessage *);
 
-		User * handleSignin(string *);//string --> ReceivedMessage.
-		bool handleSignup(string *);//string --> ReceivedMessage.
-		void handleSignout(string *);//string --> ReceivedMessage.
+		User * handleSignin(ReceivedMessage *);
+		bool handleSignup(ReceivedMessage *);
+		void handleSignout(ReceivedMessage *);
 
-		void handleLeaveGame(string *);//string --> ReceivedMessage.
-		void handleStartGame(string *);//string --> ReceivedMessage.
-		void handlePlayerAnswer(string *);//string --> ReceivedMessage.
+		void handleLeaveGame(ReceivedMessage *);
+		void handleStartGame(ReceivedMessage *);
+		void handlePlayerAnswer(ReceivedMessage *);
 
-		bool handleCreateRoom(string *);//string --> ReceivedMessage.
-		bool handleCloseRoom(string *);//string --> ReceivedMessage.
-		bool handleJoinRoom(string *);//string --> ReceivedMessage.
-		bool handleLeaveRoom(string *);//string --> ReceivedMessage.
-		void handleGetUsersInRoom(string *);//string --> ReceivedMessage.
-		void handleGetRooms(string *);//string --> ReceivedMessage.
+		bool handleCreateRoom(ReceivedMessage *);
+		bool handleCloseRoom(ReceivedMessage *);
+		bool handleJoinRoom(ReceivedMessage *);
+		bool handleLeaveRoom(ReceivedMessage *);
+		void handleGetUsersInRoom(ReceivedMessage *);
+		void handleGetRooms(ReceivedMessage *);
 
-		void handleGetBestScores(string *);//string --> ReceivedMessage.
-		void handleGetPersonalStatus(string *);//string --> ReceivedMessage.
+		void handleGetBestScores(ReceivedMessage *);
+		void handleGetPersonalStatus(ReceivedMessage *);
 
 		void handleReceivedMessages();
-		void addReceivedMessage(string *);//string --> ReceivedMessage.
-		string * buildReceiveMessage(SOCKET, int);//string --> ReceivedMessage.
+		void addReceivedMessage(ReceivedMessage *);
+		ReceivedMessage * buildReceiveMessage(SOCKET, int);
 
 		User * getUserByName(string name);
 		User * getUserBySocket(SOCKET sock);

@@ -1,5 +1,10 @@
 #include "Socket.h"
 
+Socket::Socket(SOCKET sock)
+{
+	_socket = sock;
+}
+
 /**
 	*This function constructs a Socket object, initialized the WSADATA, socket
 	 configs and attaching port and IP to listen to.
@@ -91,6 +96,11 @@ int Socket::socketSend(SOCKET sockNum, string buffer)
 	return send(sockNum, buffer.c_str(), buffer.size(), 0);
 }
 
+int Socket::socketSend(string buffer)
+{
+	return send(_socket, buffer.c_str(), buffer.length(), 0);
+}
+
 /**
 	*This function receives the data in the buffer with the given socket.
 	*Input: Socket number.
@@ -103,10 +113,25 @@ string Socket::socketRecv(SOCKET sockNum)
 	if ((recv_size = recv(_socket, server_reply, 2000, 0)) == SOCKET_ERROR)
 	{
 		cout << "recv failed" << endl;
+		return "";
 	}
 	string reply(server_reply);
 	cout << "Reply received\n" << endl;
 	return reply;
+}
+
+string Socket::socketRecv()
+{
+	char reply[2000];
+	int result = recv(_socket, reply, 2000, 0);
+
+	if (result == SOCKET_ERROR)
+	{
+		cout << "recv failed" << endl;
+		return "";
+	}
+	string data(reply);
+	return data;
 }
 
 /**

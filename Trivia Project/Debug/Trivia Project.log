@@ -1,7 +1,7 @@
-﻿Build started 04/06/2016 18:10:11.
+﻿Build started 05/06/2016 12:47:08.
      1>Project "D:\Documents\Projects\Trivia Project\Trivia Project\Trivia Project.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         D:\Program Files\VS12\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Game.cpp Helper.cpp main.cpp Room.cpp Socket.cpp TriviaServer.cpp User.cpp
+         D:\Program Files\VS12\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Game.cpp main.cpp ReceivedMessage.cpp Room.cpp Socket.cpp TriviaServer.cpp User.cpp
          User.cpp
      1>c:\program files (x86)\windows kits\8.1\include\shared\ws2def.h(100): warning C4005: 'AF_IPX' : macro redefinition
                  c:\program files (x86)\windows kits\8.1\include\um\winsock.h(452) : see previous definition of 'AF_IPX'
@@ -388,12 +388,12 @@
                  d:\documents\projects\trivia project\trivia project\user.h(14) : see declaration of 'Room'
      1>d:\documents\projects\trivia project\trivia project\room.cpp(38): error C2027: use of undefined type 'Room'
                  d:\documents\projects\trivia project\trivia project\user.h(14) : see declaration of 'Room'
+         ReceivedMessage.cpp
          main.cpp
      1>d:\documents\projects\trivia project\trivia project\user.h(14): error C2011: 'Room' : 'class' type redefinition
                  d:\documents\projects\trivia project\trivia project\room.h(15) : see declaration of 'Room'
      1>d:\documents\projects\trivia project\trivia project\user.h(19): error C2011: 'User' : 'class' type redefinition
                  d:\documents\projects\trivia project\trivia project\room.h(10) : see declaration of 'User'
-         Helper.cpp
          Game.cpp
      1>c:\program files (x86)\windows kits\8.1\include\shared\ws2def.h(100): warning C4005: 'AF_IPX' : macro redefinition
                  c:\program files (x86)\windows kits\8.1\include\um\winsock.h(452) : see previous definition of 'AF_IPX'
@@ -578,4 +578,4 @@
 
 Build FAILED.
 
-Time Elapsed 00:00:05.00
+Time Elapsed 00:00:03.87

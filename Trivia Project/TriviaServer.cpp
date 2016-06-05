@@ -37,77 +37,77 @@ void TriviaServer::clientHandler(SOCKET client)
 
 }
 
-void TriviaServer::safeDeleteUser(string *)
+void TriviaServer::safeDeleteUser(ReceivedMessage * msg)
 {
 
 }
 
-User * TriviaServer::handleSignin(string *)
+User * TriviaServer::handleSignin(ReceivedMessage * msg)
 {
 
 }
 
-bool TriviaServer::handleSignup(string *)
+bool TriviaServer::handleSignup(ReceivedMessage * msg)
 {
 
 }
 
-void TriviaServer::handleSignout(string *)
+void TriviaServer::handleSignout(ReceivedMessage * msg)
 {
 
 }
 
-void TriviaServer::handleLeaveGame(string *)
+void TriviaServer::handleLeaveGame(ReceivedMessage * msg)
 {
 
 }
 
-void TriviaServer::handleStartGame(string *)
+void TriviaServer::handleStartGame(ReceivedMessage * msg)
 {
 
 }
 
-void TriviaServer::handlePlayerAnswer(string *)
+void TriviaServer::handlePlayerAnswer(ReceivedMessage * msg)
 {
 
 }
 
-bool TriviaServer::handleCreateRoom(string *)
+bool TriviaServer::handleCreateRoom(ReceivedMessage * msg)
 {
 
 }
 
-bool TriviaServer::handleCloseRoom(string *)
+bool TriviaServer::handleCloseRoom(ReceivedMessage * msg)
 {
 
 }
 
-bool TriviaServer::handleJoinRoom(string *)
+bool TriviaServer::handleJoinRoom(ReceivedMessage * msg)
 {
 
 }
 
-bool TriviaServer::handleLeaveRoom(string *)
+bool TriviaServer::handleLeaveRoom(ReceivedMessage * msg)
 {
 
 }
 
-void TriviaServer::handleGetUsersInRoom(string *)
+void TriviaServer::handleGetUsersInRoom(ReceivedMessage * msg)
 {
 
 }
 
-void TriviaServer::handleGetRooms(string *)
+void TriviaServer::handleGetRooms(ReceivedMessage * msg)
 {
 
 }
 
-void TriviaServer::handleGetBestScores(string *)
+void TriviaServer::handleGetBestScores(ReceivedMessage * msg)
 {
 
 }
 
-void TriviaServer::handleGetPersonalStatus(string *)
+void TriviaServer::handleGetPersonalStatus(ReceivedMessage * msg)
 {
 
 }
@@ -117,12 +117,12 @@ void TriviaServer::handleReceivedMessages()
 
 }
 
-void TriviaServer::addReceivedMessage(string *)
+void TriviaServer::addReceivedMessage(ReceivedMessage * msg)
 {
 
 }
 
-string * TriviaServer::buildReceiveMessage(SOCKET client_sock, int msgCode)
+ReceivedMessage * TriviaServer::buildReceiveMessage(SOCKET client_sock, int msgCode)
 {
 
 }
