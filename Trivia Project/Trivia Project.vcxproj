@@ -71,6 +71,7 @@
     <ClCompile Include="Room.cpp" />
     <ClCompile Include="Socket.cpp" />
     <ClCompile Include="sqlite3.c" />
+    <ClCompile Include="test.cpp" />
     <ClCompile Include="TriviaServer.cpp" />
     <ClCompile Include="User.cpp" />
   </ItemGroup>
